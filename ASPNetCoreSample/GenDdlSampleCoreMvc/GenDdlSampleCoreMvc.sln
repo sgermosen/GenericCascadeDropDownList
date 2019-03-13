@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenDdlSampleCoreMvc", "GenDdlSampleCoreMvc\GenDdlSampleCoreMvc.csproj", "{5610BDD5-1A61-4673-B7BD-7497F6C4E5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5610BDD5-1A61-4673-B7BD-7497F6C4E5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5610BDD5-1A61-4673-B7BD-7497F6C4E5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5610BDD5-1A61-4673-B7BD-7497F6C4E5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5610BDD5-1A61-4673-B7BD-7497F6C4E5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3AB3378-9222-4949-A271-5736FFCC93A6}
+	EndGlobalSection
+EndGlobal
