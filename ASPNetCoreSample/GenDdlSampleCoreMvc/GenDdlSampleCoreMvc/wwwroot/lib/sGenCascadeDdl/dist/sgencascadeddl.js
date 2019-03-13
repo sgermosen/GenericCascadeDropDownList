@@ -45,6 +45,12 @@
         //ViewBag.Products = product;
 
 //4. Receive the data from viewbag on your view
+        //var countries = ViewBag.Countries;
+        //var cities = ViewBag.Cities;
+        //var category = ViewBag.Categories;
+        //var product = ViewBag.Products;
+//5. Add the class element to the master "MasterDdl" and to the details "DetailDdl"
+
 
 
 
