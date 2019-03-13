@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GenDdlSampleCoreMvc.Models;
 using Microsoft.AspNetCore.Mvc;
-using GenDdlSampleCoreMvc.Models;
+using System.Diagnostics;
 
 namespace GenDdlSampleCoreMvc.Controllers
 {
