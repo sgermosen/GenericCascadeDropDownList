@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GenDdlSampleCoreMvc.Controllers
+namespace sGenCascadeDdl.dist
 {
     public class ClientsController : Controller
     {
@@ -29,11 +29,7 @@ namespace GenDdlSampleCoreMvc.Controllers
                 });
 
             return Json(dbList);
-        }
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Clients.ToListAsync());
-        }
+        }         
 
         public async Task<IActionResult> Create()
         {

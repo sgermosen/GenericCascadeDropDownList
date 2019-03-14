@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GenDdlSampleCoreMvc.Models
+﻿namespace sGenCascadeDdl.dist
 {
     public class Client
     {
@@ -14,7 +9,6 @@ namespace GenDdlSampleCoreMvc.Models
         public string Lastname { get; set; }
 
         public City City { get; set; }
-
-        public ICollection<Order> Orders { get; set; }
+       
     }
 }

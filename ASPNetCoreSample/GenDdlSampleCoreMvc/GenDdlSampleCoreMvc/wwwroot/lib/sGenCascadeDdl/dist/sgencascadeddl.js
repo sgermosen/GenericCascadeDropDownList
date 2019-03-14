@@ -1,9 +1,10 @@
-﻿//////////////////////////////////////////////////////////////
-//Author:       Starling Germosen Reynoso
-//Social Media: www.fb.com/sgermosen24, www.fb.com/xamarindo
-//Website:      www.praysoft.net
-//GitHub:       Github.com/sgermosen
-/////////////////////////////////////////////////////////////
+﻿/////////////////////////////////////////////////////////////////////////////////////////
+//Author:             Starling Germosen Reynoso                                 /////////
+//Social Media:       www.fb.com/sgermosen24, www.fb.com/xamarindo              /////////
+//Website:            www.praysoft.net                                          /////////
+//GitHub:             Github.com/sgermosen                                      /////////
+//Repo and Tutorial:  https://github.com/sgermosen/GenericCascadeDropDownList   /////////
+/////////////////////////////////////////////////////////////////////////////////////////
 
 //Actual Mode of work with this o netCore
 

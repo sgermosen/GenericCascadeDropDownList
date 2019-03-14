@@ -3,40 +3,75 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GenDdlSampleCoreMvc.wwwroot.lib.sGenCascadeDdl.dist
+namespace sGenCascadeDdl.dist
 {
-    public class OrderController
+    public class ClientsController: Controller
     {
         private readonly AppContext _context;
+        private readonly GenericSelectList _genericSelectList;
 
-        public OrderController(AppContext context)
+        public ClientsController(AppContext context)
         {
             _context = context;
+            _genericSelectList = new GenericSelectList();
         }
 
-        public IActionResult Create()
+        public JsonResult GetCitiesFromCountry(int id)
         {
-            var countries = _context.Countries.OrderBy(p => p.Name).ToList();
-            ViewBag.Countries = countries;
+            var dbList = _context.Cities.Where(m => m.Country.Id == id)
+                .Select(c => new
+                {
+                    Id = c.Id,
+                    Name = c.Name
+                });
 
-            var cities = new List<City>
+            return Json(dbList);
+        }
+
+        public async Task<IActionResult> Create()
+        {
+            var countries = new List<Country>
             {
-                new City { Id = 0, Name = "-- Choose a city --" }
+                new Country
+                {
+                    Id = 0,
+                    Name = "Choose one Country"
+                }
             };
 
-            ViewBag.Cities = cities;
+            countries.AddRange(await _context.Countries.ToListAsync());
 
-            var categories = _context.Categories.OrderBy(p => p.Name).ToList();
-            ViewBag.Categories = categories;
+            var cities = new List<City>();
 
-            var product = new List<Product>
+            var model = new ClientViewModel
             {
-                new Product { Id = 0, Name = "-- Choose a product --" }
+                Countries = _genericSelectList.CreateSelectList(countries, x => x.Id, x => x.Name),
+                Cities = _genericSelectList.CreateSelectList(cities, x => x.Id, x => x.Name)
             };
 
-            ViewBag.Products = product;
+            return View(model);
+        }
 
-            return View();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(ClientViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var city = await _context.Cities.FindAsync(model.CityId);
+
+                var client = new Client
+                {
+                    Name = model.Name,
+                    Lastname = model.Lastname,
+                    City = city
+                };
+
+                _context.Add(client);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
         }
 
     }

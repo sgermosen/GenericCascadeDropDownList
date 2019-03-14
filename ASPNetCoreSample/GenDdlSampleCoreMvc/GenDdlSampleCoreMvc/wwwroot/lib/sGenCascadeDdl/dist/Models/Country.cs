@@ -1,4 +1,4 @@
-﻿namespace GenDdlSampleCoreMvc.Models
+﻿namespace sGenCascadeDdl.dist
 {
     using System.Collections.Generic;
 

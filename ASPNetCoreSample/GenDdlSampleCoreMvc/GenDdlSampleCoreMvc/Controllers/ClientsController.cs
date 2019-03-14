@@ -30,6 +30,7 @@ namespace GenDdlSampleCoreMvc.Controllers
 
             return Json(dbList);
         }
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Clients.ToListAsync());
