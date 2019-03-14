@@ -12,6 +12,6 @@
 
         public Country Country { get; set; }
 
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Client> Clients { get; set; }
     }
 }

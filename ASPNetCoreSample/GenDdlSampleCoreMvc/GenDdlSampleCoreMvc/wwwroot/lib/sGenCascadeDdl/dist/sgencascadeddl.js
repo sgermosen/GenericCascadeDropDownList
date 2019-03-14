@@ -105,27 +105,28 @@
 //   @Html.DropDownList("Doctors", null, htmlAttributes: new { @class = "form-control DetailDdl" })
 //7. Open a Script Section to declareted the Url, where it is gonna search the data (Point 2)
 //  <script type="text/javascript">
-//      var Urls = '@Url.Action("GetLabPosibleResults", "Laboratories")';
+//      var gUrlDdl = '@Url.Action("GetLabPosibleResults", "Laboratories")';
 //  </script >
 //8. Enjoy it
 //Starling Germosen Reynoso www.fb.com/sgermosen24, www.fb.com/xamarindo, www.praysoft.net
 
 $(document).ready(function () {
     $(".MasterDdl").change(function () {
+        //clean the populated data on the detail dropdownlist
         $(".DetailDdl").empty();
         $.ajax({
             type: "POST",
-            url: Urls,
+            url: gUrlDdl,
             dataType: "json",
             data: { id: $(".MasterDdl").val() },
             success: function (list) {
                 $.each(list,
                     function (i, item) {
-                        $(".DetailDdl").append('<option value="' + item.Id + '">' + item.Name + "</option>");
+                        $(".DetailDdl").append('<option value="' + item.id + '">' + item.name + "</option>");
                     });
             },
             error: function (ex) {
-                alert("Error al intentar traer los datos para llenar el detalle." + ex);
+                alert("Error trying load data." + ex);
             }
         });
         return false;

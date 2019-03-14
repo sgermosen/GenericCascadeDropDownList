@@ -47,6 +47,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Clients" asp-action="Index">Clients</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">Orders</a>
                         </li>
                     </ul>
@@ -87,8 +90,11 @@
     </environment>
     <script src="~/lib/sGenCascadeDdl/dist/sgencascadeddl.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+<script>
+    //var gUrlDdl = '@Url.Action("GetCitiesFromCountry", "Clients")';
+</script>
 
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

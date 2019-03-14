@@ -10,7 +10,7 @@
 
         public string Destination { get; set; }
 
-        public City City { get; set; }
+        public Client Client { get; set; }
 
         public  ICollection<OrderDetail> OrderDetails { get; set; }
 
